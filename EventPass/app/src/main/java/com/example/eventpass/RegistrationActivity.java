@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-/** Activity 3: simulated registration/payment. ProgressBar driven by a Handler, lifecycle-aware. */
+
 public class RegistrationActivity extends AppCompatActivity {
 
     private static final int INTERVAL_MS = 50;
@@ -60,9 +60,10 @@ public class RegistrationActivity extends AppCompatActivity {
         btnTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Unique-looking ticket code derived from name + event
-                String seed = data.getString(Keys.NAME, "") + data.getString(Keys.EVENT, "");
-                int code = Math.abs(seed.hashCode()) % 100000;
+                // CHANGED: the code formula now lives in TicketUtils (shared with TicketActivity)
+                int code = TicketUtils.makeCode(
+                        data.getString(Keys.NAME, ""),
+                        data.getString(Keys.EVENT, ""));
 
                 Bundle b = new Bundle(data);
                 b.putInt(Keys.CODE, code);
