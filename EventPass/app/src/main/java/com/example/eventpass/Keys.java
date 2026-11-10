@@ -1,6 +1,5 @@
 package com.example.eventpass;
 
-/** Shared constants: the Bundle key inside the Intent + the data keys. */
 public final class Keys {
     private Keys() {}
 
@@ -11,4 +10,10 @@ public final class Keys {
     public static final String TYPE = "type";
     public static final String TOTAL = "total";
     public static final String CODE = "code";
+ 
+    public static final String DISCOUNT = "discount";
+
+
+    public static final int REQ_PROMO = 1;
+    public static final int REQ_EDIT_NAME = 2;
 }
