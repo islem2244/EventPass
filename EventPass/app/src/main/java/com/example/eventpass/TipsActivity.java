@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-/** Activity 5 (new): tips depending on ticket type. RelativeLayout root with a nested LinearLayout header. */
 public class TipsActivity extends AppCompatActivity {
 
     @Override
